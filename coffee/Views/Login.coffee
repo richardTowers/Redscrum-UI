@@ -12,8 +12,8 @@ define ['underscore', 'backbone', 'text!Templates/Login.html', 'bootstrap'],
     # Declare selectors.
     logInButtonSelector = '#login'
     apiKeyFieldSelector = '#apiKey'
-    loginFieldSetSelector = '#fldstLogIn'
-    loginErrorTextSelector = '#fldstLogIn .help-inline'
+    loginFieldSetSelector = '#loginGroup'
+    loginErrorTextSelector = '#loginErrorGroup .help-block'
     
     # Create the Backbone View.
     Backbone.View.extend
