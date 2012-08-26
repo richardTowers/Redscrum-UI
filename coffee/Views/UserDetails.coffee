@@ -1,5 +1,8 @@
 ###global define###
 
+# User Details View
+#==================
+# Renders the username and log out option. Handles logging out.
 
 define ['underscore', 'backbone', 'text!Templates/UserDetails.html', 'bootstrap'],
   (_, Backbone, userDetailsTemplate) ->
