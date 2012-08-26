@@ -1,4 +1,4 @@
-Redscrum CoffeeScript
+Redscrum UI
 =====================
 
 Introduction
@@ -6,6 +6,11 @@ Introduction
 
 Redscrum is a pretty basic web app that queries the redmine API and auto-gerenates
 scrum burndown charts.
+
+The user interface is written in CoffeeScript, making pretty heavy use of [BackboneJS](http://backbonejs.org/).
+
+Because of Cross Domain issues we do not query the Redmine API directly, but instead make (somewhat simplified) calls to our own server.
+Our server then does some manipulation on the data (largely using the magic of LINQ) and returns it in a more palatable form.
 
 Dependecies
 ---------------------
