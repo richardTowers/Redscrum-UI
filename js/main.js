@@ -6,7 +6,7 @@ require.config({
   paths: {
     underscore: 'libs/underscore',
     backbone: 'libs/backbone',
-    bootstrap: 'libs/bootstrap/bootstrap'
+    bootstrap: 'libs/bootstrap'
   },
   shim: {
     underscore: {
