@@ -1,12 +1,17 @@
-
 .DS_Store
 
+# Compiled CSS
+css
+
+# Build Script Output
+publish
 intermediate
+
+# Compiled Docs
+docs
+
+# Compiled JavaScript
 js/Models
 js/Views
-css
-publish
-docs
 js/Router.js
-
 js/main.js
