@@ -1,17 +1,23 @@
-<p>To log in, simply provide your Redmine API key in the field below:</p>
-<div id="loginGroup" class="control-group input-prepend input-append">
+<fieldset id="loginGroup" class="control-group input-prepend input-append">
+  <legend>To log in, simply provide your Redmine API key in the field below:</legend>
   <span class="add-on"><i class="icon-lock"></i></span>
   <input id="apiKey" type="text" class="span11" placeholder="Your Redmine API Key">
   <button id="login" data-loading-text="<i class='icon-refresh icon-white'></i>" class="btn btn-primary">Go &raquo;</button>
-</div>
+</fieldset>
 <div id="loginErrorGroup" class="control-group error">
   <div class="help-block hide">Sorry, it doesn't look like that's a valid API key.</div>
   <div class="help-block hide">API keys are 40 character long alphanumeric sequences. For example: <var>341a3376cac19972cd51d3e47c91e9aefb73c167</var></div>
 </div>
 </div>
-<h3>Finding your API key:</h3>
-<div class="row">
-  <span class="span4">Log in to redmine with your usual credentials.</span>
-  <span class="span4">Go to: <a href="http://redmine.acturis.com/my/account">redmine.acturis.com/my/account</a></span>
-  <span class="span4">In the right hand column, under API Key, click show.</span>
+<div class="clearfix">
+<figure class="pull-right">
+  <img src="img/redmineApiKey.png" alt="Screenshot of the redmine API screen." class="img-polaroid">
+  <figcaption>The API access key screen.</figcaption>
+</figure>
+<h3>Finding your API access key:</h3>
+<ul>
+  <li>Log in to redmine with your usual credentials.</li>
+  <li>Go to: <a href="http://redmine.acturis.com/my/account">redmine.acturis.com/my/account</a></li>
+  <li>In the right hand column, under API access key, click show.</li>
+</ul>
 </div>
