@@ -8,8 +8,8 @@ define(['underscore', 'backbone', 'text!Templates/Login.html', 'bootstrap'], fun
   var apiKeyFieldSelector, logInButtonSelector, loginErrorTextSelector, loginFieldSetSelector;
   logInButtonSelector = '#login';
   apiKeyFieldSelector = '#apiKey';
-  loginFieldSetSelector = '#fldstLogIn';
-  loginErrorTextSelector = '#fldstLogIn .help-inline';
+  loginFieldSetSelector = '#loginGroup';
+  loginErrorTextSelector = '#loginErrorGroup .help-block';
   return Backbone.View.extend({
     el: '#main',
     initialize: function() {
