@@ -18,9 +18,18 @@ require.config
       deps: ['underscore']
       exports: 'Backbone'
 
-# Load dependencies and other modules
-require ['underscore', 'backbone', 'Models/User', 'Views/Login', 'Views/UserDetails', 'Router'],
-  (_, Backbone, UserModel, LoginView, UserDetailsView) ->
+require [
+  # Load dependencies
+  'underscore'
+  'backbone'
+  # Load Models
+  'Models/User'
+  # Load Views
+  'Views/Main'
+  'Views/Login'
+  'Views/UserDetails'
+  'Router'],
+  (_, Backbone, UserModel, MainView, LoginView, UserDetailsView) ->
     'use strict'
     
     # Models
@@ -33,10 +42,19 @@ require ['underscore', 'backbone', 'Models/User', 'Views/Login', 'Views/UserDeta
     # Views
     # ---------------
     
+    #### Child Views ####
+    # We need to create child views first, so that they can be passed into their parents.
     
-    # Create a login view (see [Views/Login](Views/Login.coffee.html) ).
+    
+    #### Top Level Views ####
+    
+    # Create a main view (see [Views/Main](Views/Main.coffee.html)).
+    mainView = new MainView({model: userModel})
+    # Create a login view (see [Views/Login](Views/Login.coffee.html)).
     loginView = new LoginView({model: userModel})
-    # Create a user details view (see [Views/UserDetails](Views/UserDetails.coffee.html) ).
+    # Create a user details view (see [Views/UserDetails](Views/UserDetails.coffee.html)).
     userDetailsView = new UserDetailsView({model: userModel})
+    
+    
     
     return
