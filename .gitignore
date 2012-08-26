@@ -2,7 +2,11 @@
 .DS_Store
 
 intermediate
-js
+js/Models
+js/Views
 css
 publish
 docs
+js/Router.js
+
+js/main.js
