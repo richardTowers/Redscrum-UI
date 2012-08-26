@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head><title>Login.coffee</title><meta http-equiv="Content-Type" content="text/html" charset="UTF-8"><link rel="stylesheet" media="all" href="../../docco.css"></head><body><div id="container"><div id="background"></div><div id="jump_to">Jump To &hellip;<div id="jump_wrapper"><div id="jump_page"><a href="../../index.html" class="source"><span class="file_name">README</span></a><a href="../../coffee/main.coffee.html" class="source "><span class="base_path">coffee / </span><span class="file_name">main.coffee</span></a><a href="../../coffee/Models/User.coffee.html" class="source "><span class="base_path">coffee / Models / </span><span class="file_name">User.coffee</span></a><a href="../../coffee/Router.coffee.html" class="source "><span class="base_path">coffee / </span><span class="file_name">Router.coffee</span></a><a href="../../coffee/Views/Login.coffee.html" class="source selected"><span class="base_path">coffee / Views / </span><span class="file_name">Login.coffee</span></a><a href="../../coffee/Views/UserDetails.coffee.html" class="source "><span class="base_path">coffee / Views / </span><span class="file_name">UserDetails.coffee</span></a></div></div></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"><h1>Login.coffee</h1><div class="filepath">coffee/Views/</div></th><th class="code"></th></tr></thead><tbody><tr id="section-1"><td class="docs"><div class="pilwrap"><a href="#section-1" class="pilcrow">&#182;</a></div><h2>global define</h2>
+</td><td class="code"><div class="highlight"><pre></pre></div></td></tr><tr id="section-2"><td class="docs"><div class="pilwrap"><a href="#section-2" class="pilcrow">&#182;</a></div><h1>Login View</h1>
+
+<p>Renders and handles the user interface for users that are not logged in.</p>
+</td><td class="code"><div class="highlight"><pre></pre></div></td></tr><tr id="section-3"><td class="docs"><div class="pilwrap"><a href="#section-3" class="pilcrow">&#182;</a></div><p>Load dependencies and template.</p>
+</td><td class="code"><div class="highlight"><pre><span class="nx">define</span> <span class="p">[</span><span class="s">&#39;underscore&#39;</span><span class="p">,</span> <span class="s">&#39;backbone&#39;</span><span class="p">,</span> <span class="s">&#39;text!Templates/Login.html&#39;</span><span class="p">,</span> <span class="s">&#39;bootstrap&#39;</span><span class="p">],</span>
+  <span class="nf">(_, Backbone, loginTemplate) -&gt;</span>
+    <span class="s">&#39;use strict&#39;</span>
+    </pre></div></td></tr><tr id="section-4"><td class="docs"><div class="pilwrap"><a href="#section-4" class="pilcrow">&#182;</a></div><p>Declare selectors.</p>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">logInButtonSelector = </span><span class="s">&#39;#login&#39;</span>
+    <span class="nv">apiKeyFieldSelector = </span><span class="s">&#39;#apiKey&#39;</span>
+    <span class="nv">loginFieldSetSelector = </span><span class="s">&#39;#fldstLogIn&#39;</span>
+    <span class="nv">loginErrorTextSelector = </span><span class="s">&#39;#fldstLogIn .help-inline&#39;</span>
+    </pre></div></td></tr><tr id="section-5"><td class="docs"><div class="pilwrap"><a href="#section-5" class="pilcrow">&#182;</a></div><p>Create the Backbone View.</p>
+</td><td class="code"><div class="highlight"><pre>    <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span>
+      </pre></div></td></tr><tr id="section-6"><td class="docs"><div class="pilwrap"><a href="#section-6" class="pilcrow">&#182;</a></div><h2>Target Element</h2>
+
+<p>This is the selector for the DOM element that the view will be rendered in.</p>
+</td><td class="code"><div class="highlight"><pre>      <span class="nv">el: </span><span class="s">&#39;#main&#39;</span>
+      </pre></div></td></tr><tr id="section-7"><td class="docs"><div class="pilwrap"><a href="#section-7" class="pilcrow">&#182;</a></div><h2>Initialize</h2>
+</td><td class="code"><div class="highlight"><pre>      <span class="nv">initialize: </span><span class="nf">() -&gt;</span></pre></div></td></tr><tr id="section-8"><td class="docs"><div class="pilwrap"><a href="#section-8" class="pilcrow">&#182;</a></div><p>Set the view up to re-render whenever the model changes.
+We will need to redraw if the user logs out.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="nx">@model</span><span class="p">.</span><span class="kc">on</span> <span class="s">&#39;change&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">render</span><span class="p">,</span> <span class="k">this</span></pre></div></td></tr><tr id="section-9"><td class="docs"><div class="pilwrap"><a href="#section-9" class="pilcrow">&#182;</a></div><p>Render the View (if necessary).</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="nx">@render</span><span class="p">()</span>
+      </pre></div></td></tr><tr id="section-10"><td class="docs"><div class="pilwrap"><a href="#section-10" class="pilcrow">&#182;</a></div><h2>Template</h2>
+
+<p>The login template requires no data, so we can build it here.</p>
+</td><td class="code"><div class="highlight"><pre>      <span class="nv">template: </span><span class="nx">_</span><span class="p">.</span><span class="nx">template</span><span class="p">(</span><span class="nx">loginTemplate</span><span class="p">,</span> <span class="p">{})</span>
+      </pre></div></td></tr><tr id="section-11"><td class="docs"><div class="pilwrap"><a href="#section-11" class="pilcrow">&#182;</a></div><h2>Render</h2>
+</td><td class="code"><div class="highlight"><pre>      <span class="nv">render: </span><span class="nf">() -&gt;</span></pre></div></td></tr><tr id="section-12"><td class="docs"><div class="pilwrap"><a href="#section-12" class="pilcrow">&#182;</a></div><p>Only render this view if the user is <em>not</em> logged in.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="k">if</span> <span class="nx">@model</span><span class="p">.</span><span class="nx">get</span> <span class="s">&#39;isLoggedIn&#39;</span>
+          <span class="nx">@$el</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">else</span>
+          <span class="nx">@$el</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">template</span><span class="p">)</span>
+        <span class="k">return</span>
+      </pre></div></td></tr><tr id="section-13"><td class="docs"><div class="pilwrap"><a href="#section-13" class="pilcrow">&#182;</a></div><h2>Events</h2>
+</td><td class="code"><div class="highlight"><pre>      <span class="nv">events:</span>
+        <span class="s">&#39;click #login&#39;</span><span class="o">:</span> <span class="s">&#39;handleLogin&#39;</span>
+      </pre></div></td></tr><tr id="section-14"><td class="docs"><div class="pilwrap"><a href="#section-14" class="pilcrow">&#182;</a></div><h2>Handle Successful Login</h2>
+</td><td class="code"><div class="highlight"><pre>      <span class="nv">handleLogin: </span><span class="nf">() -&gt;</span></pre></div></td></tr><tr id="section-15"><td class="docs"><div class="pilwrap"><a href="#section-15" class="pilcrow">&#182;</a></div><p>Set the button to loading while we make our AJAX call.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="nx">$</span><span class="p">(</span><span class="nx">logInButtonSelector</span><span class="p">).</span><span class="nx">button</span> <span class="s">&#39;loading&#39;</span></pre></div></td></tr><tr id="section-16"><td class="docs"><div class="pilwrap"><a href="#section-16" class="pilcrow">&#182;</a></div><p>Get the key from the field.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="nv">apiKey = </span><span class="nx">$</span><span class="p">(</span><span class="nx">apiKeyFieldSelector</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span></pre></div></td></tr><tr id="section-17"><td class="docs"><div class="pilwrap"><a href="#section-17" class="pilcrow">&#182;</a></div><p>Check that the key is in a valid format.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="k">if</span> <span class="sr">/^[a-z,0-9]{40}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">apiKey</span><span class="p">)</span></pre></div></td></tr><tr id="section-18"><td class="docs"><div class="pilwrap"><a href="#section-18" class="pilcrow">&#182;</a></div><p>Use the key to log in.</p>
+</td><td class="code"><div class="highlight"><pre>          <span class="nx">@model</span><span class="p">.</span><span class="nx">logIn</span><span class="p">(</span>
+            <span class="nx">apiKey</span><span class="p">,</span>
+            <span class="nx">@handleErroneousLogin</span><span class="p">)</span>
+        <span class="k">else</span></pre></div></td></tr><tr id="section-19"><td class="docs"><div class="pilwrap"><a href="#section-19" class="pilcrow">&#182;</a></div><p>Display the fact that the key is invalid to the user.
+<strong>Todo</strong>: this is a different situation to a valid-key that fails to authenticate. </p>
+</td><td class="code"><div class="highlight"><pre>          <span class="k">this</span><span class="p">.</span><span class="nx">handleErroneousLogin</span><span class="p">()</span>
+        <span class="k">return</span>
+      </pre></div></td></tr><tr id="section-20"><td class="docs"><div class="pilwrap"><a href="#section-20" class="pilcrow">&#182;</a></div><h2>Handle Erroroneous Login</h2>
+</td><td class="code"><div class="highlight"><pre>      <span class="nv">handleErroneousLogin: </span><span class="nf">() -&gt;</span></pre></div></td></tr><tr id="section-21"><td class="docs"><div class="pilwrap"><a href="#section-21" class="pilcrow">&#182;</a></div><p>The AJAX call has finished so we can reset the button state.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="nx">$</span><span class="p">(</span><span class="nx">logInButtonSelector</span><span class="p">).</span><span class="nx">button</span><span class="p">(</span><span class="s">&#39;reset&#39;</span><span class="p">)</span></pre></div></td></tr><tr id="section-22"><td class="docs"><div class="pilwrap"><a href="#section-22" class="pilcrow">&#182;</a></div><p>Display the error to the user.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="nx">$</span><span class="p">(</span><span class="nx">loginFieldSetSelector</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s">&#39;error&#39;</span><span class="p">)</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nx">loginErrorTextSelector</span><span class="p">).</span><span class="nx">show</span><span class="p">()</span>
+
+</pre></div></td></tr></tbody></table><div id="generated">generated Sun Aug 26 2012 17:03:51 GMT+0100 (BST)  </div></div></body></html>
