@@ -18,9 +18,7 @@ define(['underscore', 'backbone', 'text!Templates/Login.html', 'bootstrap'], fun
     },
     template: _.template(loginTemplate, {}),
     render: function() {
-      if (this.model.get('isLoggedIn')) {
-        this.$el.html('');
-      } else {
+      if (!(this.model.get('isLoggedIn'))) {
         this.$el.html(this.template);
       }
     },

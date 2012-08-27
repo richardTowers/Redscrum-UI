@@ -19,11 +19,14 @@ require.config({
   }
 });
 
-require(['underscore', 'backbone', 'Models/User', 'Views/Login', 'Views/UserDetails', 'Router'], function(_, Backbone, UserModel, LoginView, UserDetailsView) {
+require(['underscore', 'backbone', 'Models/User', 'Views/Main', 'Views/Login', 'Views/UserDetails', 'Router'], function(_, Backbone, UserModel, MainView, LoginView, UserDetailsView) {
   'use strict';
 
-  var loginView, userDetailsView, userModel;
+  var loginView, mainView, userDetailsView, userModel;
   userModel = new UserModel();
+  mainView = new MainView({
+    model: userModel
+  });
   loginView = new LoginView({
     model: userModel
   });
