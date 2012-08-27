@@ -35,10 +35,11 @@ define ['underscore', 'backbone'], (_, Backbone) ->
         dataType: 'json'
         success: (data) =>
           # Hooray! We can log in.
-          @set {'apiKey': key}
-          @set {'username': data.userName}
-          # Registered views will automatically update themselves when `isLoggedIn` changes.
-          @set {'isLoggedIn': true}
+          @set
+            'apiKey': key
+            'username': data.userName
+            # Registered views will automatically update themselves when `isLoggedIn` changes.
+            'isLoggedIn': true
           if window.localStorage
             window.localStorage.setItem 'apiKey', key
         error: error)
@@ -47,9 +48,10 @@ define ['underscore', 'backbone'], (_, Backbone) ->
     # --------------    
     logOut: () ->
       # Clear out all of our state.
-      @set {'apiKey': ''}
-      @set {'username': ''}
-      # Registered views will automatically update themselves when 'isLoggedIn' changes.
-      @set {'isLoggedIn': false}
+      @set
+        'apiKey': ''
+        'username': ''
+        # Registered views will automatically update themselves when 'isLoggedIn' changes.
+        'isLoggedIn': false
       if window.localStorage
             window.localStorage.removeItem 'apiKey'
