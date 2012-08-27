@@ -41,9 +41,7 @@ define ['underscore', 'backbone', 'text!Templates/Login.html', 'bootstrap'],
       # --------------
       render: () ->
         # Only render this view if the user is *not* logged in.
-        if @model.get 'isLoggedIn'
-          @$el.html('')
-        else
+        if !(@model.get 'isLoggedIn')
           @$el.html(this.template)
         return
       
