@@ -13,7 +13,7 @@ define [
       # Target Element
       # --------------
       # This is the selector for the DOM element that the view will be rendered in.
-      el: '#page'
+      el: '#queries'
       
       # Initialize
       # --------------

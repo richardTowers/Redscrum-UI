@@ -13,7 +13,7 @@ define [
       # Target Element
       # --------------
       # This is the selector for the DOM element that the view will be rendered in.
-      el: '#page'
+      el: '#tickets'
       
       # Initialize
       # --------------
@@ -31,5 +31,5 @@ define [
       # --------------
       render: () ->
         # Render the template
-        # @$el.html(this.template)
+        @$el.html(this.template)
         return
