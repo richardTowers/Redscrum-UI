@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>main.coffee</title><meta http-equiv="Content-Type" content="text/html" charset="UTF-8"><link rel="stylesheet" media="all" href="../docco.css"></head><body><div id="container"><div id="background"></div><div id="jump_to">Jump To &hellip;<div id="jump_wrapper"><div id="jump_page"><a href="../index.html" class="source"><span class="file_name">README</span></a><a href="../coffee/main.coffee.html" class="source selected"><span class="base_path">coffee / </span><span class="file_name">main.coffee</span></a><a href="../coffee/Models/User.coffee.html" class="source "><span class="base_path">coffee / Models / </span><span class="file_name">User.coffee</span></a><a href="../coffee/Router.coffee.html" class="source "><span class="base_path">coffee / </span><span class="file_name">Router.coffee</span></a><a href="../coffee/Views/Login.coffee.html" class="source "><span class="base_path">coffee / Views / </span><span class="file_name">Login.coffee</span></a><a href="../coffee/Views/UserDetails.coffee.html" class="source "><span class="base_path">coffee / Views / </span><span class="file_name">UserDetails.coffee</span></a></div></div></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"><h1>main.coffee</h1><div class="filepath">coffee/</div></th><th class="code"></th></tr></thead><tbody><tr id="section-1"><td class="docs"><div class="pilwrap"><a href="#section-1" class="pilcrow">&#182;</a></div><h2>global require</h2>
+<!DOCTYPE html><html><head><title>main.coffee</title><meta http-equiv="Content-Type" content="text/html" charset="UTF-8"><link rel="stylesheet" media="all" href="../docco.css"></head><body><div id="container"><div id="background"></div><div id="jump_to">Jump To &hellip;<div id="jump_wrapper"><div id="jump_page"><a href="../index.html" class="source"><span class="file_name">README</span></a><a href="../coffee/main.coffee.html" class="source selected"><span class="base_path">coffee / </span><span class="file_name">main.coffee</span></a><a href="../coffee/Models/User.coffee.html" class="source "><span class="base_path">coffee / Models / </span><span class="file_name">User.coffee</span></a><a href="../coffee/Router.coffee.html" class="source "><span class="base_path">coffee / </span><span class="file_name">Router.coffee</span></a><a href="../coffee/Views/Chart.coffee.html" class="source "><span class="base_path">coffee / Views / </span><span class="file_name">Chart.coffee</span></a><a href="../coffee/Views/Dates.coffee.html" class="source "><span class="base_path">coffee / Views / </span><span class="file_name">Dates.coffee</span></a><a href="../coffee/Views/Login.coffee.html" class="source "><span class="base_path">coffee / Views / </span><span class="file_name">Login.coffee</span></a><a href="../coffee/Views/Main.coffee.html" class="source "><span class="base_path">coffee / Views / </span><span class="file_name">Main.coffee</span></a><a href="../coffee/Views/Queries.coffee.html" class="source "><span class="base_path">coffee / Views / </span><span class="file_name">Queries.coffee</span></a><a href="../coffee/Views/Tickets.coffee.html" class="source "><span class="base_path">coffee / Views / </span><span class="file_name">Tickets.coffee</span></a><a href="../coffee/Views/UserDetails.coffee.html" class="source "><span class="base_path">coffee / Views / </span><span class="file_name">UserDetails.coffee</span></a></div></div></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"><h1>main.coffee</h1><div class="filepath">coffee/</div></th><th class="code"></th></tr></thead><tbody><tr id="section-1"><td class="docs"><div class="pilwrap"><a href="#section-1" class="pilcrow">&#182;</a></div><h2>global require</h2>
 </td><td class="code"><div class="highlight"><pre></pre></div></td></tr><tr id="section-2"><td class="docs"><div class="pilwrap"><a href="#section-2" class="pilcrow">&#182;</a></div><h1>Main</h1>
 
 <p>A single entry point for Redscrum. Sets up dependecies and
@@ -8,26 +8,41 @@ builds the necessary models and views.</p>
   <span class="nv">paths:</span>
     <span class="nv">underscore: </span><span class="s">&#39;libs/underscore&#39;</span>
     <span class="nv">backbone: </span><span class="s">&#39;libs/backbone&#39;</span>
-    <span class="nv">bootstrap: </span><span class="s">&#39;libs/bootstrap/bootstrap&#39;</span>
+    <span class="nv">bootstrap: </span><span class="s">&#39;libs/bootstrap&#39;</span>
   <span class="nv">shim:</span>
     <span class="nv">underscore:</span>
       <span class="nv">exports: </span><span class="s">&#39;_&#39;</span>
     <span class="nv">backbone:</span>
       <span class="nv">deps: </span><span class="p">[</span><span class="s">&#39;underscore&#39;</span><span class="p">]</span>
-      <span class="nv">exports: </span><span class="s">&#39;Backbone&#39;</span></pre></div></td></tr><tr id="section-4"><td class="docs"><div class="pilwrap"><a href="#section-4" class="pilcrow">&#182;</a></div><p>Load dependencies and other modules</p>
-</td><td class="code"><div class="highlight"><pre><span class="nx">require</span> <span class="p">[</span><span class="s">&#39;underscore&#39;</span><span class="p">,</span> <span class="s">&#39;backbone&#39;</span><span class="p">,</span> <span class="s">&#39;Models/User&#39;</span><span class="p">,</span> <span class="s">&#39;Views/Login&#39;</span><span class="p">,</span> <span class="s">&#39;Views/UserDetails&#39;</span><span class="p">,</span> <span class="s">&#39;Router&#39;</span><span class="p">],</span>
-  <span class="nf">(_, Backbone, UserModel, LoginView, UserDetailsView) -&gt;</span>
+      <span class="nv">exports: </span><span class="s">&#39;Backbone&#39;</span>
+
+<span class="nx">require</span> <span class="p">[</span></pre></div></td></tr><tr id="section-4"><td class="docs"><div class="pilwrap"><a href="#section-4" class="pilcrow">&#182;</a></div><p>Load dependencies</p>
+</td><td class="code"><div class="highlight"><pre>  <span class="s">&#39;underscore&#39;</span>
+  <span class="s">&#39;backbone&#39;</span></pre></div></td></tr><tr id="section-5"><td class="docs"><div class="pilwrap"><a href="#section-5" class="pilcrow">&#182;</a></div><p>Load Models</p>
+</td><td class="code"><div class="highlight"><pre>  <span class="s">&#39;Models/User&#39;</span></pre></div></td></tr><tr id="section-6"><td class="docs"><div class="pilwrap"><a href="#section-6" class="pilcrow">&#182;</a></div><p>Load Views</p>
+</td><td class="code"><div class="highlight"><pre>  <span class="s">&#39;Views/Main&#39;</span>
+  <span class="s">&#39;Views/Login&#39;</span>
+  <span class="s">&#39;Views/UserDetails&#39;</span>
+  <span class="s">&#39;Router&#39;</span><span class="p">],</span>
+  <span class="nf">(_, Backbone, UserModel, MainView, LoginView, UserDetailsView) -&gt;</span>
     <span class="s">&#39;use strict&#39;</span>
-    </pre></div></td></tr><tr id="section-5"><td class="docs"><div class="pilwrap"><a href="#section-5" class="pilcrow">&#182;</a></div><h2>Models</h2>
+    </pre></div></td></tr><tr id="section-7"><td class="docs"><div class="pilwrap"><a href="#section-7" class="pilcrow">&#182;</a></div><h2>Models</h2>
 </td><td class="code"><div class="highlight"><pre>    
-    </pre></div></td></tr><tr id="section-6"><td class="docs"><div class="pilwrap"><a href="#section-6" class="pilcrow">&#182;</a></div><p>Create a user model (see <a href="Models/User.coffee.html">Models/User</a> ).</p>
+    </pre></div></td></tr><tr id="section-8"><td class="docs"><div class="pilwrap"><a href="#section-8" class="pilcrow">&#182;</a></div><p>Create a user model (see <a href="Models/User.coffee.html">Models/User</a> ).</p>
 </td><td class="code"><div class="highlight"><pre>    <span class="nv">userModel = </span><span class="k">new</span> <span class="nx">UserModel</span><span class="p">()</span>
-    </pre></div></td></tr><tr id="section-7"><td class="docs"><div class="pilwrap"><a href="#section-7" class="pilcrow">&#182;</a></div><h2>Views</h2>
+    </pre></div></td></tr><tr id="section-9"><td class="docs"><div class="pilwrap"><a href="#section-9" class="pilcrow">&#182;</a></div><h2>Views</h2>
+</td><td class="code"><div class="highlight"><pre>    </pre></div></td></tr><tr id="section-10"><td class="docs"><div class="pilwrap"><a href="#section-10" class="pilcrow">&#182;</a></div><h3>Child Views</h3>
+
+<p>We need to create child views first, so that they can be passed into their parents.</p>
 </td><td class="code"><div class="highlight"><pre>    
-    </pre></div></td></tr><tr id="section-8"><td class="docs"><div class="pilwrap"><a href="#section-8" class="pilcrow">&#182;</a></div><p>Create a login view (see <a href="Views/Login.coffee.html">Views/Login</a> ).</p>
-</td><td class="code"><div class="highlight"><pre>    <span class="nv">loginView = </span><span class="k">new</span> <span class="nx">LoginView</span><span class="p">({</span><span class="nv">model: </span><span class="nx">userModel</span><span class="p">})</span></pre></div></td></tr><tr id="section-9"><td class="docs"><div class="pilwrap"><a href="#section-9" class="pilcrow">&#182;</a></div><p>Create a user details view (see <a href="Views/UserDetails.coffee.html">Views/UserDetails</a> ).</p>
+    </pre></div></td></tr><tr id="section-11"><td class="docs"><div class="pilwrap"><a href="#section-11" class="pilcrow">&#182;</a></div><h3>Top Level Views</h3>
+</td><td class="code"><div class="highlight"><pre>    </pre></div></td></tr><tr id="section-12"><td class="docs"><div class="pilwrap"><a href="#section-12" class="pilcrow">&#182;</a></div><p>Create a main view (see <a href="Views/Main.coffee.html">Views/Main</a>).</p>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">mainView = </span><span class="k">new</span> <span class="nx">MainView</span><span class="p">({</span><span class="nv">model: </span><span class="nx">userModel</span><span class="p">})</span></pre></div></td></tr><tr id="section-13"><td class="docs"><div class="pilwrap"><a href="#section-13" class="pilcrow">&#182;</a></div><p>Create a login view (see <a href="Views/Login.coffee.html">Views/Login</a>).</p>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">loginView = </span><span class="k">new</span> <span class="nx">LoginView</span><span class="p">({</span><span class="nv">model: </span><span class="nx">userModel</span><span class="p">})</span></pre></div></td></tr><tr id="section-14"><td class="docs"><div class="pilwrap"><a href="#section-14" class="pilcrow">&#182;</a></div><p>Create a user details view (see <a href="Views/UserDetails.coffee.html">Views/UserDetails</a>).</p>
 </td><td class="code"><div class="highlight"><pre>    <span class="nv">userDetailsView = </span><span class="k">new</span> <span class="nx">UserDetailsView</span><span class="p">({</span><span class="nv">model: </span><span class="nx">userModel</span><span class="p">})</span>
+    
+    
     
     <span class="k">return</span>
 
-</pre></div></td></tr></tbody></table><div id="generated">generated Sun Aug 26 2012 17:03:50 GMT+0100 (BST)  </div></div></body></html>
+</pre></div></td></tr></tbody></table><div id="generated">generated Mon Aug 27 2012 10:26:09 GMT+0100 (BST)  </div></div></body></html>
