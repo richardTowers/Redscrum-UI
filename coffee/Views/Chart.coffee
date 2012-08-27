@@ -31,5 +31,5 @@ define [
       # --------------
       render: () ->
         # Render the template
-        # @$el.html(this.template)
+        @$el.html(this.template)
         return
