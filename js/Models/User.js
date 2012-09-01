@@ -25,12 +25,8 @@ define(['underscore', 'backbone'], function(_, Backbone) {
         dataType: 'json',
         success: function(data) {
           _this.set({
-            'apiKey': key
-          });
-          _this.set({
-            'username': data.userName
-          });
-          _this.set({
+            'apiKey': key,
+            'username': data.userName,
             'isLoggedIn': true
           });
           if (window.localStorage) {
@@ -42,12 +38,8 @@ define(['underscore', 'backbone'], function(_, Backbone) {
     },
     logOut: function() {
       this.set({
-        'apiKey': ''
-      });
-      this.set({
-        'username': ''
-      });
-      this.set({
+        'apiKey': '',
+        'username': '',
         'isLoggedIn': false
       });
       if (window.localStorage) {

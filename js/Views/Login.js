@@ -29,7 +29,7 @@ define(['underscore', 'backbone', 'text!Templates/Login.html', 'bootstrap'], fun
       var apiKey;
       $(logInButtonSelector).button('loading');
       apiKey = $(apiKeyFieldSelector).val();
-      if (/^[a-z,0-9]{40}$/.test(apiKey)) {
+      if (/^[a-f,0-9]{40}$/.test(apiKey)) {
         this.model.logIn(apiKey, this.handleErroneousLogin);
       } else {
         this.handleErroneousLogin();
