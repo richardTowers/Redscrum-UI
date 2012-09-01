@@ -22,4 +22,4 @@ Redscrum uses
 [Underscore](http://underscorejs.org/),
 [jQuery](http://jquery.com/),
 [Require](http://requirejs.org/) and
-the [Google Chart Tools](https://developers.google.com/chart/).
+[Flot](http://code.google.com/p/flot/).

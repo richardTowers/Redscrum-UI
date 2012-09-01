@@ -58,7 +58,7 @@ define ['underscore', 'backbone', 'text!Templates/Login.html', 'bootstrap'],
         # Get the key from the field.
         apiKey = $(apiKeyFieldSelector).val()
         # Check that the key is in a valid format.
-        if /^[a-z,0-9]{40}$/.test(apiKey)
+        if /^[a-f,0-9]{40}$/.test(apiKey)
           # Use the key to log in.
           @model.logIn(
             apiKey,
